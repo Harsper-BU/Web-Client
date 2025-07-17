@@ -1,0 +1,35 @@
+.container{
+    background-color: #090F20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+    height: 83px;
+}
+.titleContainer{
+    display: flex;
+    place-items: center;
+    gap: 13px;
+}
+.titleContainer h1{
+    font-size: 32px;
+    margin: 0;
+}
+.titleContainer div{
+    font-size: 13px;
+}
+.status{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.status div{
+    font-size: 13px;
+}
+.state{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: green;
+}
