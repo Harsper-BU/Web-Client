@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    width: 310px;
+    height: 117px;
+    border-radius: 10px;
+    background: #0F172A;
+    border: 1px solid #1E293B;
+    padding-top: 22px;
+    padding: 22px 27px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.data {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 24px;
+}
+
+.subText {
+    font-weight: 400;
+    font-size: 12px;
+}
