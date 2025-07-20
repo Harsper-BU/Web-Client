@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 24px;
+}
+
+.card {
+  flex: 1;
+  background-color: #1e293b;
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  background-color: #0f172a;
+  border-radius: 8px;
+}
+
+.placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+}

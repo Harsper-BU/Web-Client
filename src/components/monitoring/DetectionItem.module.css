@@ -1,0 +1,62 @@
+.continer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.image {
+  width: 64px;
+  height: 64px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.infoContent {
+  flex-grow: 1;
+  margin-left: 16px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.badge {
+  background-color: #ef4444;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.button {
+  border: 1px solid #94a3b8;
+  background: transparent;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background-color: #334155;
+}

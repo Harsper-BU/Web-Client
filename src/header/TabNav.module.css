@@ -1,0 +1,29 @@
+.container {
+  background-color: #0f172a;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  border-radius: 8px;
+  max-width: 350px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tab:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.tabSelected {
+  background-color: #1e293b;
+  color: #fff;
+}

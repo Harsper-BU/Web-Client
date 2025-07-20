@@ -1,0 +1,75 @@
+.card {
+  background-color: #1e293b;
+  border-radius: 12px;
+  padding: 16px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.location {
+  color: #94a3b8;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.online {
+  background-color: #22c55e;
+}
+
+.offline {
+  background-color: #ef4444;
+}
+
+.cameraId {
+  color: #e2e8f0;
+  font-size: 12px;
+}
+
+.videoArea {
+  background-color: #0f172a;
+  height: 160px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  color: #94a3b8;
+}
+
+.streamText {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #94a3b8;
+}
