@@ -2,8 +2,6 @@
   max-width: 1520px;/* 이렇게 하면 안되는데 어떻게 하는걸까요*/
   width: 100%;
   margin: 0 auto;
-}
-.dashboard {
   background-color: #0f172a;
   padding: 16px;
   border-radius: 10px;

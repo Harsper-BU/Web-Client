@@ -8,6 +8,7 @@ import { MdOutlineCameraAlt } from "react-icons/md";
 import { formatNumber } from '../functions/formatFunction';
 import InformationCard from '../components/main/InformationCard';
 import { Outlet } from 'react-router-dom';
+import TabNav from './TabNav';
 const Header = () => {
     const [cameraState, setCameraState] = useState(true);
     //통계 api요청 여기서
@@ -33,7 +34,11 @@ const Header = () => {
                     <InformationCard text='위반 건수' icon={IoWarningOutline} data={formatNumber(1123)} subText='헬멧 미착용' color='#F87171' />
                     <InformationCard text='준수율' icon={BsGraphUp} data='92.8%' subText='전일 대비 +2.1%' color='#4ADE80' />
                     <InformationCard text='활성 카메라' icon={MdOutlineCameraAlt} data='1/4' subText='정상 작동 중' color='white' />
+                   
                 </section>
+                 <div>
+                    <TabNav />
+                </div>
                 <section>
                     <Outlet />
                 </section>
