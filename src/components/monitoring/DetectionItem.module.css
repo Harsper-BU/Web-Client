@@ -1,62 +1,58 @@
-.continer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+.card {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #1e293b;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+
+.card:hover {
+  background-color: #2d3a4b;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  background-color: #0f172a;
 }
 
 .image {
-  width: 64px;
-  height: 64px;
-  background-color: #ccc;
-  border-radius: 5px;
+  width: 100%;
+  height: 100%;
 }
 
-.infoContent {
-  flex-grow: 1;
-  margin-left: 16px;
-}
-
-.status {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 8px;
-}
-
-.badge {
-  background-color: #ef4444;
-  color: white;
+.noImage {
+  color: #94a3b8;
   font-size: 12px;
-  padding: 2px 8px;
-  border-radius: 12px;
+  text-align: center;
 }
 
-.details {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+.info {
+  margin-left: 15px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.info p {
+  margin: 2px 0;
   font-size: 14px;
-  color: #cbd5e1;
 }
 
-.item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+.label {
+  font-weight: bold;
+  color: #60a5fa;
 }
 
-.button {
-  border: 1px solid #94a3b8;
-  background: transparent;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.2s;
+.confidence {
+  color: #4ade80;
 }
 
-.button:hover {
-  background-color: #334155;
-}

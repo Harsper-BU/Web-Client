@@ -2,9 +2,11 @@ import styles from "./CameraList.module.css";
 import CameraItem from "./CameraItem";
 
 const CameraList = ({ cameras }) => {
+  const cameraList = Array.isArray(cameras) ? cameras : [cameras];
+
   return (
     <div className={styles.container}>
-      {cameras.map((cam) => (
+      {cameraList.map((cam) => (
         <CameraItem key={`${cam.cameraId}-${cam.updatedAt}`} cam={cam} />
       ))}
     </div>

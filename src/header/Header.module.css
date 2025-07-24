@@ -33,3 +33,7 @@
     border-radius: 10px;
     background-color: green;
 }
+
+.mainContent {
+    padding: 0 80px;
+}

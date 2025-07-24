@@ -1,33 +1,23 @@
-import { FiMapPin, FiCamera, FiClock } from "react-icons/fi";
 import styles from "./DetectionItem.module.css";
 
-const DetectionItem = ({ image, location, cameraId, timestamp }) => {
+const DetectionItem = ({ detection, onClick }) => {
+  const formattedTimestamp = new Date(detection.timestamp).toLocaleString();
+
   return (
-    <div className={styles.continer}>
-      <img src={image} alt="Detection" className={styles.image} />
-
-      <div className={styles.infoContent}>
-        <div className={styles.status}>
-          <span className={styles.badge}>위반</span>
-        </div>
-
-        <div className={styles.details}>
-          <div className={styles.item}>
-            <FiMapPin size={14} />
-            {location}
-          </div>
-          <div className={styles.item}>
-            <FiCamera size={14} />
-            {cameraId}
-          </div>
-          <div className={styles.item}>
-            <FiClock size={14} />
-            {timestamp}
-          </div>
-        </div>
+    <div className={styles.card} onClick={onClick}>
+      <div className={styles.imageContainer}>
+        {detection.image ? (
+          <img src={detection.image} alt="Detection" className={styles.image} />
+        ) : (
+          <div className={styles.noImage}>이미지 없음</div>
+        )}
       </div>
-
-      <button className={styles.button}>상세보기</button>
+      <div className={styles.info}>
+        <p className={styles.label}>{detection.label}</p>
+        <p className={styles.confidence}>신뢰도: {(detection.confidence * 100).toFixed(2)}%</p>
+        <p>시간: {formattedTimestamp}</p>
+        <p>카메라 ID: {detection.camera_id}</p>
+      </div>
     </div>
   );
 };

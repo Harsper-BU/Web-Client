@@ -1,14 +1,36 @@
-import styles from "./DetectionList.module.css";
 import DetectionItem from "./DetectionItem";
+import DetectionDetailModal from "./DetectionDetailModal";
+import { useState } from "react";
 
-const DetectionList = ({detections}) => {
+const DetectionList = ({ detections }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedDetection, setSelectedDetection] = useState(null);
+
+  const handleItemClick = (detection) => {
+    setSelectedDetection(detection);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedDetection(null);
+  };
+
   return (
-    <div >
+    <div>
       {detections.map((detection) => (
-        <div key={detection.id} className={styles.card}>
-          <DetectionItem {...detection}/>
-        </div>
+        <DetectionItem
+          key={detection.id}
+          detection={detection}
+          onClick={() => handleItemClick(detection)}
+        />
       ))}
+      {isModalOpen && (
+        <DetectionDetailModal
+          detection={selectedDetection}
+          onClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 };

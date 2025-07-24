@@ -4,67 +4,35 @@ import Main from "./pages/main/Main";
 import DetectionList from "./components/monitoring/DetectionList";
 import CameraList from "./components/monitoring/CameraList";
 import Analytics from "./components/monitoring/Analytics";
+import StreamCard from "./components/monitoring/StreamCard";
 
 function App() {
   ///http
   const detections = [
-    {
-      id: 1,
-      image: "",
-      location: "경기 성남시 수정구 장한로 42",
-      cameraId: "CAM-001",
-      timestamp: "2025-07-14 14:30:25",
-    },
-    {
-      id: 2,
-      image: "",
-      location: "경기 성남시 수정구 장한로 42",
-      cameraId: "CAM-001",
-      timestamp: "2025-07-19 09:10:15",
-    },
-    {
-      id: 3,
-      image: "",
-      location: "경기 성남시 수정구 장한로 42",
-      cameraId: "CAM-001",
-      timestamp: "2025-07-18 18:45:00",
-    },
-    {
-      id: 4,
-      image: "",
-      location: "경기 성남시 수정구 장한로 42",
-      cameraId: "CAM-004",
-      timestamp: "2025-07-17 11:05:45",
-    },
+    { id: 1, label: 'person', confidence: 0.92, timestamp: Date.now() - 1000, camera_id: 'CAM-01', image: '' },
+    { id: 2, label: 'car', confidence: 0.88, timestamp: Date.now() - 2000, camera_id: 'CAM-01', image: '' },
+    { id: 3, label: 'person', confidence: 0.95, timestamp: Date.now() - 5000, camera_id: 'CAM-01', image: '' },
+    { id: 4, label: 'bicycle', confidence: 0.78, timestamp: Date.now() - 8000, camera_id: 'CAM-02', image: '' },
   ];
 
-  //RTSP / HLS
-
-  const cameras = [
-    {
-      cameraId: "CAM-001",
-      status: true,
-      location: "경기도 성남시 창업로 교차로",
-      updatedAt: "2025-01-15 13:12:10",
-    },
-    {
-      cameraId: "CAM-002",
-      status: false,
-      location: "서울특별시 강남구 테헤란로 212",
-      updatedAt: "2025-01-15 10:45:00",
-    },
-  ];
-
+  
+  // Big Buck Bunny (샘플 비디오)
+  // https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8\
+  
+  //  HLS
+  const dummyStream = {
+    cameraId: "CAM-001",
+    streamUrl: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+  };
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Header />}>
           <Route element={<Main />}>
             <Route index element={<DetectionList detections={detections} />} />
-            <Route path="camera" element={<CameraList cameras={cameras} />} />
+            <Route path="camera" element={<CameraList cameras={{...dummyStream, status: true}} />} />
+            <Route path="stream" element={<StreamCard {...dummyStream} />} />
             <Route path="analytics" element={<Analytics />} />
-            {/* <Route index element={<Navigate to='live' replace />} />
-            <Route path='live' element={<DetectionList />}/> */}
           </Route>
         </Route>
       </Routes>

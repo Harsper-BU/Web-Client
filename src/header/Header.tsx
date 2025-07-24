@@ -23,25 +23,26 @@ const Header = () => {
                     </div>
                 </div>
                 <div className={s.status}>
-                    <button>실시간 영상</button>
                     <div style={{ background: cameraState ? 'green' : 'red' }} className={s.state}></div>
-                    <div>시스템 정상</div>
+                    <div>시스템 상태</div>
                 </div>
             </header>
-            <main style={{ paddingTop: 19, paddingLeft: 80, paddingRight: 80 }}>
-                <section style={{ display: 'flex', width: '100%', justifyContent: 'center', gap: 13 }}>
-                    <InformationCard text='총 탐지 건수' icon={LuEye} data={formatNumber(1247)} subText='오늘 기준' color='white' />
-                    <InformationCard text='위반 건수' icon={IoWarningOutline} data={formatNumber(1123)} subText='헬멧 미착용' color='#F87171' />
-                    <InformationCard text='준수율' icon={BsGraphUp} data='92.8%' subText='전일 대비 +2.1%' color='#4ADE80' />
-                    <InformationCard text='활성 카메라' icon={MdOutlineCameraAlt} data='1/4' subText='정상 작동 중' color='white' />
-                   
-                </section>
-                 <div>
-                    <TabNav />
+            <main style={{ paddingTop: 19,}}>
+                <div className={s.mainContent}>
+                    <section style={{ display: 'flex', width: '100%', justifyContent: 'space-between', gap: 13 }}>
+                        <InformationCard text='총 탐지 건수' icon={LuEye} data={formatNumber(1247)} subText='오늘 기준' color='white' />
+                        <InformationCard text='위반 건수' icon={IoWarningOutline} data={formatNumber(1123)} subText='헬멧 미착용' color='#F87171' />
+                        <InformationCard text='준수율' icon={BsGraphUp} data='92.8%' subText='전일 대비 +2.1%' color='#4ADE80' />
+                        <InformationCard text='활성 카메라' icon={MdOutlineCameraAlt} data='1/4' subText='정상 작동 중' color='white' />
+                    
+                    </section>
+                    <div>
+                        <TabNav />
+                    </div>
+                    <section>
+                        <Outlet />
+                    </section>
                 </div>
-                <section>
-                    <Outlet />
-                </section>
             </main>
         </>
     )
