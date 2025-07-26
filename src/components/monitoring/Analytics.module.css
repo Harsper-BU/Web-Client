@@ -38,3 +38,68 @@
   color: rgba(255, 255, 255, 0.5);
   font-size: 12px;
 }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  color: white;
+}
+
+.table th,
+.table td {
+  border: 1px solid #334155;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #334155;
+  font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #1e293b;
+}
+
+.table tbody tr:hover {
+  background-color: #334155;
+}
+
+.barChartContainer {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  gap: 10px;
+  padding-bottom: 20px; /* Space for labels */
+  position: relative;
+}
+
+.barWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  flex: 1;
+  position: relative;
+}
+
+.bar {
+  width: 40px;
+  background-color: #3b82f6; /* A nice blue color */
+  border-radius: 4px 4px 0 0;
+  transition: height 0.5s ease-in-out;
+  position: relative;
+}
+
+.barLabel {
+  position: absolute;
+  bottom: -20px; /* Position below the bar */
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  white-space: nowrap;
+  transform: translateX(-50%);
+  left: 50%;
+}

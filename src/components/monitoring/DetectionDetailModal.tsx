@@ -3,30 +3,33 @@ import styles from "./DetectionDetailModal.module.css";
 const DetectionDetailModal = ({ detection, onClose }) => {
   if (!detection) return null;
 
-  const formattedTimestamp = new Date(detection.timestamp).toLocaleString();
-
   return (
     <div className={styles.modalOverlay} onClick={onClose}>
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <h2>상세 정보</h2>
         <div className={styles.detailItem}>
-          <strong>카메라 ID:</strong> {detection.camera_id}
+          <strong>카메라 ID:</strong> {detection.deviceId}
         </div>
         <div className={styles.detailItem}>
-          <strong>라벨:</strong> {detection.label}
+          <strong>상태 :</strong>{" "}
+          {detection.helmetStatus === "violation" ? "헬멧 미착용" : "헬멧 착용"}
         </div>
-        <div className={styles.detailItem}>
+        {/* <div className={styles.detailItem}>
           <strong>신뢰도:</strong> {(detection.confidence * 100).toFixed(2)}%
+        </div> */}
+        <div className={styles.detailItem}>
+          <strong>위치 :</strong>
+          {detection.address}
         </div>
         <div className={styles.detailItem}>
-          <strong>시간:</strong> {formattedTimestamp}
+          <strong>시간:</strong> {detection.timestamp.join(".")}
         </div>
-        {detection.image ? (
+        {detection.imageLocation ? (
           <div className={styles.imageContainer}>
             <img
-              src={detection.image}
+              src={detection.imageLocation}
               alt="Detection"
-              className={styles.detectionImage}
+              className={styles.detectioImage}
             />
           </div>
         ) : (

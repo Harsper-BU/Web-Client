@@ -6,17 +6,18 @@ const CameraItem = ({ cam }) => {
     <div className={styles.card}>
       <div className={styles.title}>
         <div>
-          {cam.location && <p className={styles.location}>{cam.location}</p>}
+          {cam.address && <p className={styles.location}>{cam.address}</p>}
+          <div>{cam.lastUpdate.join(".")}</div>
         </div>
         <div className={styles.status}>
           {cam.status !== undefined && (
             <span
               className={`${styles.check} ${
-                cam.status ? styles.online : styles.offline
+                cam.status === "on" ? styles.online : styles.offline
               }`}
             />
           )}
-          <span className={styles.cameraId}>{cam.cameraId}</span>
+          <span className={styles.cameraId}>{cam.deviceId}</span>
         </div>
       </div>
 

@@ -1,3 +1,4 @@
+
 import s from './InformationCard.module.css';
 import type { IconType } from 'react-icons';
 type InformationCardProps = {
