@@ -1,0 +1,122 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #020617;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.container h1 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #60a5fa;
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    background-color: #1e293b;
+    color: #ffffff;.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #020617;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.container h1 {
+    font-size: 35px;
+    margin-bottom: 30px;
+    color: #60a5fa;
+}
+
+.inputGroup {
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 350px;
+}
+
+.inputGroup input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    background-color: #1e293b;
+    color: #ffffff;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.inputGroup input::placeholder {
+    color: #94a3b8;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+}
+
+.button {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px 20px;
+    background-color: #60a5fa;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #3b82f6;
+}
+
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.inputGroup input::placeholder {
+    color: #94a3b8;
+}
+
+.inputGroup input:focus {
+    outline: none;
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+}
+
+.button {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px 20px;
+    background-color: #60a5fa;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background-color: #3b82f6;
+}

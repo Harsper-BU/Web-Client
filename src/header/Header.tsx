@@ -7,17 +7,21 @@ import { BsGraphUp } from "react-icons/bs";
 import { MdOutlineCameraAlt } from "react-icons/md";
 import { formatNumber } from "../functions/formatFunction";
 import InformationCard from "../components/main/InformationCard";
-import { Outlet } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 import TabNav from "./TabNav";
 import axios from "axios";
+
 const Header = () => {
   const [cameraState, setCameraState] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [statis, setStatis] = useState({
     todayDetectionCount: 0,
     totalViolationCount: 0,
     complianceRate: 0,
     activateCamera: 0,
   });
+  const navigate = useNavigate();
+
   const healthCheck = async () => {
     try {
       await axios.get(`${import.meta.env.VITE_IP}/api/health`);
@@ -40,9 +44,19 @@ const Header = () => {
     } catch (err) {
       console.error(err);
     }
-    // console.log(res);
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("harsper-token");
+    setIsLoggedIn(false);
+    navigate("/login");
+  };
+
   useEffect(() => {
+    const token = localStorage.getItem("harsper-token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
     healthCheck();
     statistisc();
   }, []);
@@ -56,6 +70,22 @@ const Header = () => {
             <h1>헬멧 감지 시스템</h1>
             <div>실시간 오토바이 헬멧 착용 모니터링</div>
           </div>
+        </div>
+        <div className={s.authContainer}>
+          {isLoggedIn ? (
+            <button onClick={handleLogout} className={s.authButton}>
+              로그아웃
+            </button>
+          ) : (
+            <>
+              <Link to="/login" className={s.authButton}>
+                로그인
+              </Link>
+              <Link to="/join" className={s.authButton}>
+                회원가입
+              </Link>
+            </>
+          )}
         </div>
         <div className={s.status}>
           <div

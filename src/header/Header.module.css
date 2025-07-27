@@ -34,6 +34,28 @@
     background-color: green;
 }
 
+.authContainer {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.authButton {
+    background-color: #1a202c; /* Darker shade for buttons */
+    color: #ffffff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* For Link components */
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.authButton:hover {
+    background-color: #2d3748; /* Slightly lighter on hover */
+}
+
 .mainContent {
     padding: 0 80px;
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import s from "./Login.module.css";
 
 const Login = () => {
   const [data, setData] = useState({ username: "", password: "" });
@@ -28,15 +29,9 @@ const Login = () => {
     }
   };
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <h1>Login</h1>
+    <div className={s.container}>
+      <h1>로그인</h1>
+      <div className={s.inputGroup}>
         <input
           type="text"
           name="username"
@@ -44,6 +39,8 @@ const Login = () => {
           onChange={handleChange}
           placeholder="아이디"
         />
+      </div>
+      <div className={s.inputGroup}>
         <input
           type="password"
           name="password"
@@ -51,8 +48,8 @@ const Login = () => {
           onChange={handleChange}
           placeholder="비밀번호"
         />
-        <button onClick={handleClick}>Sumit</button>
       </div>
+      <button onClick={handleClick} className={s.button}>로그인</button>
     </div>
   );
 };
