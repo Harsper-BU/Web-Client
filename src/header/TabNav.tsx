@@ -13,11 +13,7 @@ const TabNav = () => {
       icon: <FaCamera size={16} />,
       label: "카메라 상태",
     },
-    {
-      to: "/stream",
-      icon: <FaVideo size={16} />,
-      label: "실시간 스트리밍",
-    },
+    
     {
       to: "analytics",
       icon: <FaChartBar size={16} />,

@@ -2,9 +2,9 @@ import styles from "./CameraList.module.css";
 import CameraItem from "./CameraItem";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import StreamCard from "./StreamCard";
 
-const CameraList = ({ cameras }) => {
-  // const cameraList = Array.isArray(cameras) ? cameras : [cameras];
+const CameraList = () => {
   const [cameraList, setCameraList] = useState([
     {
       deviceId: "camera001",
@@ -14,6 +14,12 @@ const CameraList = ({ cameras }) => {
       ipAddress: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
     },
   ]);
+  const [selectCamera, setSelectCamera] = useState(null);
+
+  const handleBack = () => {
+    setSelectCamera(null);
+  };
+
   const cameraStatus = async () => {
     try {
       const res = await axios.get(`${import.meta.env.VITE_IP}/auth/camera`, {
@@ -31,12 +37,17 @@ const CameraList = ({ cameras }) => {
   }, []);
   return (
     <div className={styles.container}>
-      {cameraList.map((cam) => (
-        <CameraItem
-          key={`${cam.deviceId}-${cam.lastUpdate.join()}`}
-          cam={cam}
-        />
-      ))}
+      {selectCamera ? (
+        <StreamCard cam={selectCamera} handleBack={handleBack} />
+      ) : (
+        cameraList.map((cam) => (
+          <CameraItem
+            key={`${cam.deviceId}-${cam.lastUpdate.join()}`}
+            cam={cam}
+            onClick={() => setSelectCamera(cam)}
+          />
+        ))
+      )}
     </div>
   );
 };

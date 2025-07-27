@@ -26,12 +26,10 @@
 }
 
 .content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 200px;
+  min-height: 320px; 
   background-color: #0f172a;
   border-radius: 8px;
+  padding: 10px;
 }
 
 .placeholder {
@@ -72,7 +70,7 @@
   height: 100%;
   width: 100%;
   gap: 10px;
-  padding-bottom: 20px; /* Space for labels */
+  padding-bottom: 20px; 
   position: relative;
 }
 
@@ -88,7 +86,7 @@
 
 .bar {
   width: 40px;
-  background-color: #3b82f6; /* A nice blue color */
+  background-color: #3b82f6; 
   border-radius: 4px 4px 0 0;
   transition: height 0.5s ease-in-out;
   position: relative;
@@ -96,7 +94,7 @@
 
 .barLabel {
   position: absolute;
-  bottom: -20px; /* Position below the bar */
+  bottom: -20px; 
   font-size: 10px;
   color: rgba(255, 255, 255, 0.7);
   white-space: nowrap;

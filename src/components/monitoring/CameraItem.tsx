@@ -1,9 +1,9 @@
 import { FiVideo } from "react-icons/fi";
 import styles from "./CameraItem.module.css";
 
-const CameraItem = ({ cam }) => {
+const CameraItem = ({ cam, onClick }) => {
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={onClick}>
       <div className={styles.title}>
         <div>
           {cam.address && <p className={styles.location}>{cam.address}</p>}

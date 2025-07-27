@@ -70,3 +70,26 @@
   height: auto;
   border-radius: 8px;
 }
+
+.message {
+  color: #cbd5e1;
+  font-size: 18px;
+  text-align: center;
+  padding: 20px;
+}
+
+.backButton {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 16px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-end; /* 오른쪽 정렬 */
+}
+
+.backButton:hover {
+  background-color: #2563eb;
+}
