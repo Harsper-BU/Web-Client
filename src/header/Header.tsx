@@ -49,7 +49,7 @@ const Header = () => {
   const handleLogout = () => {
     localStorage.removeItem("harsper-token");
     setIsLoggedIn(false);
-    navigate("/login");
+    navigate("/");
   };
 
   useEffect(() => {
@@ -71,23 +71,24 @@ const Header = () => {
             <div>실시간 오토바이 헬멧 착용 모니터링</div>
           </div>
         </div>
-        <div className={s.authContainer}>
-          {isLoggedIn ? (
-            <button onClick={handleLogout} className={s.authButton}>
-              로그아웃
-            </button>
-          ) : (
-            <>
-              <Link to="/login" className={s.authButton}>
-                로그인
-              </Link>
-              <Link to="/join" className={s.authButton}>
-                회원가입
-              </Link>
-            </>
-          )}
-        </div>
+
         <div className={s.status}>
+          <div className={s.authContainer}>
+            {isLoggedIn ? (
+              <button onClick={handleLogout} className={s.authButton}>
+                로그아웃
+              </button>
+            ) : (
+              <>
+                <Link to="/login" className={s.authButton}>
+                  로그인
+                </Link>
+                <Link to="/join" className={s.authButton}>
+                  회원가입
+                </Link>
+              </>
+            )}
+          </div>
           <div
             style={{ background: cameraState ? "green" : "red" }}
             className={s.state}

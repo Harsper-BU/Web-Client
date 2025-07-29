@@ -16,7 +16,7 @@ const DetectionItem = ({ detection, onClick }) => {
         )}
       </div>
       <div className={styles.info}>
-        <p className={styles.label}>
+        <p className={styles.label} style={{color:detection.helmetStatus==='violation'?"#fa6a60ff":"#60a5fa"}}>
           {detection.helmetStatus === "violation" ? "헬멧 미착용" : "헬멧 착용"}
         </p>
         <p>카메라 ID: {detection.deviceId}</p>

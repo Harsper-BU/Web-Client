@@ -4,18 +4,18 @@ import styles from "./TabNav.module.css";
 const TabNav = () => {
   const tabs = [
     {
-      to: "/",
+      to: "/main",
       icon: <FaVideo size={16} />,
       label: "최근 객체 탐지",
     },
     {
-      to: "/camera",
+      to: "/main/camera",
       icon: <FaCamera size={16} />,
       label: "카메라 상태",
     },
     
     {
-      to: "analytics",
+      to: "/main/analytics",
       icon: <FaChartBar size={16} />,
       label: "통계 분석",
     },
