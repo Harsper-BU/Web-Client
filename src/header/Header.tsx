@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import s from './Header.module.css';
 const Header = () => {
-    const [cameraState, setCameraState] = useState(true);
+    const [cameraState] = useState(true);
     return (
         <header className={s.container}>
             <div className={s.titleContainer}>
