@@ -29,18 +29,29 @@ sudo nano /etc/nginx/sites-available/web-client
 아래 설정 값 붙여넣기
 ```
 server {
-    listen 80;
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    root /var/www/html;
+    index index.html;
     server_name _;
 
-    root /var/www/web;
-    index index.html;
+    location /hls/ {
+        alias /home/cloud9/Edge-Device/hls/;
+        add_header Cache-Control no-cache;
+        add_header Access-Control-Allow-Origin *;
 
-    client_max_body_size 100M;
+        types {
+            application/vnd.apple.mpegurl m3u8;
+            video/mp2t ts;
+        }
+    }
 
     location / {
         try_files $uri $uri/ /index.html;
     }
 }
+
 ```
 기본 설정 끄고, 새로운 것으로 연결
 ```
