@@ -32,7 +32,7 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
-    root /var/www/html;
+    root /var/www/web;
     index index.html;
     server_name _;
 
